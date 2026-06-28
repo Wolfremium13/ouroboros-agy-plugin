@@ -97,7 +97,12 @@ Development must strictly proceed in small, iterative steps following the Red-Gr
 
 ## 6. Python-Specific Best Practices & STLC
 
-*   **Test Runner**: Prefer `pytest` for running tests.
-*   **Virtual Environments**: Always perform tests and run tools inside the project's designated virtual environment (`.venv`, `poetry`, etc.).
+*   **Dependency Management**: Always manage project packages using `pipenv` (with `Pipfile` and `Pipfile.lock`).
+*   **Virtual Environments**: Run all tests, tools, and commands inside the pipenv environment (e.g., `pipenv run pytest`, `pipenv run ruff`).
+*   **Makefile Command Automation**: A `Makefile` must exist in the root of the project to standardize command execution. Always use the following commands rather than raw shell invocations:
+    *   `make setup`: Installs development and production dependencies.
+    *   `make tests`: Executes the unit and integration test suite.
+    *   `make lint`: Checks and formats project code.
+    *   `make clean`: Deletes cached directories and removes the virtual environment.
 *   **Type Hinting**: Ensure all new Python code includes type annotations.
-*   **Formatting/Linting**: Run `ruff check` / `ruff format` (or `black`/`flake8`/`isort` as configured) on modified files before committing green/refactored phases.
+*   **Formatting/Linting**: Run `make lint` on modified files before committing green/refactored phases.
