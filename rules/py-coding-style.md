@@ -199,3 +199,35 @@ class UUIDProvider(Protocol):
     def new_uuid(self) -> uuid.UUID:
         ...
 ```
+
+---
+
+## 9. Naming Conventions
+
+Consistent naming ensures readability, reduces cognitive load, and aligns Python code with the business domain.
+
+### 9.1 Naming Conventions Table
+
+| Element | Style | Example | Notes |
+| :--- | :--- | :--- | :--- |
+| **Interfaces / Protocols / ABCs** | PascalCase | `InvoicePaymentClient` | Represents a port or abstraction. |
+| **Classes / Dataclasses** | PascalCase | `InvoicePayment` | Implementations, entities, or value objects. |
+| **Methods & Functions** | snake_case | `process_payment` | Should start with a verb indicating action. |
+| **Method Parameters & Variables** | snake_case | `invoice_id`, `given_amount` | Descriptive snake_case names. |
+| **Private Fields & Methods** | snake_case, leading `_` | `_payment_client` | For class-level private dependencies or state. |
+| **Constants** | UPPER_CASE | `DEFAULT_TIMEOUT` | Declared at the module level. |
+| **Unit Test Classes** | PascalCase, starts with `Test` | `TestPaymentProcessor` | Standard class identifier for pytest. |
+| **Test Methods** | snake_case, starts with `test_` | `test_approve_valid_payment` | States the expected outcome or scenario. |
+| **Test Data Builders & Factories**| PascalCase, suffixed | `InvoiceBuilder` | Follows the builder or factory patterns. |
+
+### 9.2 Core Naming Guidelines
+
+1.  **Adopt the Ubiquitous Language:** Base class, method, and variable names strictly on the vocabulary spoken by domain experts. Avoid artificial technical suffixes like `OrderFactory`, `OrderManager`, or `OrderHelper` unless they have genuine business meaning.
+2.  **Focus on Intent and Purpose:** Name classes and protocols to explicitly describe their purpose and role, without referencing *how* they achieve it.
+3.  **Ports & Interfaces as Behavior Expressions (No `I` Prefix):** Define ports using `typing.Protocol` or `abc.ABC` without Hungarian notation. **Interfaces must represent behavior expressions** (focusing on capabilities, actions, or roles, e.g., `Reader`, `Writer`, `EventPublisher`, `UserRepository`). They must contain no connection, database, or technology-specific details.
+4.  **Infrastructure Implementations (Adapters):** Prefix the implementation with the specific technology or protocol being used (e.g., `PostgresUserRepository`, `HttpGovernmentClient`, `KafkaEventPublisher`). Never use generic suffixes like `Impl` or `Base`.
+5.  **Eliminate Technical Jargon:** Do not embed technical patterns or data types in class names. Avoid suffixes like `Abstract` or `Base` in class names, and avoid extraneous nouns like `Object` (e.g., use `File` instead of `FileObject`).
+6.  **Avoid Catch-All Words:** Avoid overly generic words such as `Manager`, `Helper`, `Processor`, `Engine`, `Tool`, or `Utils` unless representing a precise design pattern.
+7.  **Do Not Use Acronyms:** Spell out words fully to ensure clarity, reduce ambiguity, and maintain readability across the codebase (e.g., use `user_identifier` instead of `uid`, or `request` instead of `req`).
+8.  **Do Not Use "Should" in Production Naming:** Production code names (including files, classes, methods, and variables) must not contain the word 'should' (case-insensitive). The use of 'should' is strictly reserved for test files and test methods.
+
