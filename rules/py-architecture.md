@@ -183,7 +183,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-# Production dependencies go here
+returns = "*"
+fastapi = "*"
+pydantic = "*"
+uvicorn = "*"
 
 [dev-packages]
 assertpy = "1.1"
