@@ -14,7 +14,7 @@ Ouroboros establishes a rigorous Software Development Life Cycle (SDLC) and Soft
 
 ## 2. Overview of Features
 
-The plugin is structured into three core components: Rules, Skills, and Lifecycle Hooks.
+The plugin is structured into four core components: Rules, Skills, Subagents, and Lifecycle Hooks/Scripts.
 
 ### 2.1 Project Rules (`rules/`)
 *   **[py-way-of-working.md](rules/py-way-of-working.md):** Defines Git flow, branch naming (`conventionalbranch.org`), commit messages (`conventionalcommits.org`), strict TDD cycles (Red-Green-Refactor), security guidelines, and task automation.
@@ -33,12 +33,17 @@ The plugin is structured into three core components: Rules, Skills, and Lifecycl
 *   **`py-scaffold-bdd`:** Automatically generates Python step definitions from Gherkin feature files.
 *   **`py-scaffold-tests`:** Generates pytest, Hypothesis, and assertpy unit test templates and builders.
 
+### 2.3 Specialized Subagents (`agents/`)
+Specialized agent profiles containing model configurations, rules, and custom skills:
+*   **[py-developer](agents/py-developer/agent.json):** Specialized Python developer agent that creates, refactors, and implements features using Clean Architecture, DDD, and monadic pipelines. Configured with advanced reasoning models (e.g. `gemini-3.1-pro-high`) and strict implementation quality loops (Factory Model).
+*   **[py-reviewer](agents/py-reviewer/agent.json):** Specialized Python reviewer and auditor agent that evaluates codebases for Clean Architecture, DDD, and coding style compliance using fast audit models (e.g. `gemini-3.5-flash-medium`).
 
-### 2.3 Automated Safety Gates & Utility Commands (`hooks.json` & `scripts/`)
+### 2.4 Automated Safety Gates & Utility Commands (`hooks.json` & `scripts/`)
 Contains automation hooks and code generation commands:
 *   **[precommit_security_check.py](scripts/precommit_security_check.py):** Scans staged code changes to prevent hardcoded passwords, tokens, API keys, or private credential files from leaking into Git history.
 *   **[lint_compliance_check.py](scripts/lint_compliance_check.py):** Prevents commits containing C#-style Hungarian notation (`class IUserRepository`), Arrange/Act/Assert comments in tests, or layer dependency violations.
 *   **[create_value_object.py](scripts/create_value_object.py):** Command line utility to automatically scaffold fully-encapsulated monadic Domain Value Objects and their unit tests.
+
 
 
 ---
