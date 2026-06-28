@@ -28,11 +28,18 @@ The plugin is structured into three core components: Rules, Skills, and Lifecycl
 *   **`py-add-comments`:** Automatically documents classes and public methods using Sphinx Napoleon Google Style docstrings.
 *   **`py-create-project`:** Scaffolds a new modular monolith repository structure populated with all configuration files and a pipeline-verifying dummy test.
 *   **`py-create-module`:** Adds a new vertical bounded context slice or deployable service skeleton to an existing project.
+*   **`py-dockerize-service`:** Generates multi-stage Pipenv Dockerfiles and Compose configurations for a service.
+*   **`py-normalize-project`:** Automatically refactor, format, and normalize Python/C# files to conform to conventions.
+*   **`py-scaffold-bdd`:** Automatically generates Python step definitions from Gherkin feature files.
+*   **`py-scaffold-tests`:** Generates pytest, Hypothesis, and assertpy unit test templates and builders.
 
-### 2.3 Automated Safety Gates (`hooks.json` & `scripts/`)
-Intercepts the agent's command execution lifecycle using Antigravity `PreToolUse` hooks during `git commit` operations:
+
+### 2.3 Automated Safety Gates & Utility Commands (`hooks.json` & `scripts/`)
+Contains automation hooks and code generation commands:
 *   **[precommit_security_check.py](scripts/precommit_security_check.py):** Scans staged code changes to prevent hardcoded passwords, tokens, API keys, or private credential files from leaking into Git history.
 *   **[lint_compliance_check.py](scripts/lint_compliance_check.py):** Prevents commits containing C#-style Hungarian notation (`class IUserRepository`), Arrange/Act/Assert comments in tests, or layer dependency violations.
+*   **[create_value_object.py](scripts/create_value_object.py):** Command line utility to automatically scaffold fully-encapsulated monadic Domain Value Objects and their unit tests.
+
 
 ---
 
