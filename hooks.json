@@ -1,0 +1,19 @@
+{
+  "safety-gates": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command git commit*",
+        "hooks": [
+          {
+            "description": "Scan staged changes for credentials before committing",
+            "command": "python3 scripts/precommit_security_check.py"
+          },
+          {
+            "description": "Verify code compliance before committing",
+            "command": "python3 scripts/lint_compliance_check.py"
+          }
+        ]
+      }
+    ]
+  }
+}
