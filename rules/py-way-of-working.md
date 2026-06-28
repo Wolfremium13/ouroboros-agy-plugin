@@ -86,7 +86,16 @@ Development must strictly proceed in small, iterative steps following the Red-Gr
 
 ---
 
-## 5. Python-Specific Best Practices & STLC
+## 5. Credential & Secret Leak Prevention
+
+1.  **Strictly Prohibited:** Never commit real credentials, access tokens, API keys, passwords, private keys, or sensitive configuration files to the repository.
+2.  **Environment Variables:** Always use environment variables or configuration files listed in `.gitignore` (such as `.env`) to load sensitive information.
+3.  **Mocking/Dummy Data:** For testing and TDD, use mock objects or dummy strings (e.g., `"fake_api_key_123"`, `"mock_db_password"`) rather than production or live staging values.
+4.  **Pre-Staging Review:** Before staging files (`git add`), verify the differences using `git diff` to ensure no keys or secrets are accidentally embedded in the code or tests.
+
+---
+
+## 6. Python-Specific Best Practices & STLC
 
 *   **Test Runner**: Prefer `pytest` for running tests.
 *   **Virtual Environments**: Always perform tests and run tools inside the project's designated virtual environment (`.venv`, `poetry`, etc.).
