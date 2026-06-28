@@ -340,6 +340,32 @@ __pycache__
 .idea
 ```
 
+### 5.7 `.envrc`
+Integrates with `direnv` to automatically load environment variables (from `.env` files) and activate the correct environment context upon entering the project directory.
+
+Example `.envrc` file:
+```bash
+# Ensure the correct pyenv Python version (e.g. 3.14) is active on Linux
+use pyenv 3.14
+
+# Automatically load environment variables from the local .env file
+dotenv
+
+# Automatically activate the pipenv virtual environment
+layout pipenv
+```
+
+#### Python-Specific Usage:
+Because `direnv` injects variables directly into the shell environment before the Python process starts, the application **does not need to parse `.env` files at runtime** (avoiding libraries like `python-dotenv`). Natively read environment variables via the standard library:
+```python
+import os
+
+# Natively loaded by direnv into the OS environment
+database_url = os.environ.get("DATABASE_URL")
+```
+
+
+
 
 
 

@@ -97,6 +97,7 @@ Development must strictly proceed in small, iterative steps following the Red-Gr
 
 ## 6. Python-Specific Best Practices & STLC
 
+*   **Local Runtime Environment (pyenv & Linux)**: Projects target Linux environments and use `pyenv` to enforce specific Python runtime versions. Ensure a local `.python-version` file is present at the repository root to automatically manage the correct interpreter version.
 *   **Dependency Management**: Always manage project packages using `pipenv` (with `Pipfile` and `Pipfile.lock`).
 *   **Virtual Environments**: Run all tests, tools, and commands inside the pipenv environment (e.g., `pipenv run pytest`, `pipenv run ruff`).
 *   **Makefile Command Automation**: A `Makefile` must exist in the root of the project to standardize command execution. Always use the following commands rather than raw shell invocations:
