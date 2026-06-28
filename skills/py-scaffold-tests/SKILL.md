@@ -1,6 +1,6 @@
 ---
 name: py-scaffold-tests
-description: Automatically generate pytest, Hypothesis, and assertpy unit test templates and test data builders for domain models, value objects, and use cases.
+description: Generate pytest/Hypothesis templates and test builders for domain models and use cases.
 ---
 
 # Python Test Template Scaffolder (`py-scaffold-tests`)

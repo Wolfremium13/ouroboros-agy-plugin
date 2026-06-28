@@ -1,6 +1,6 @@
 ---
 name: py-dockerize-service
-description: Create Docker files and Compose configurations for a deployable Python application module inside the modular monolith, including Pipenv environment setup.
+description: Create Docker and Compose configs for a Python app inside the monolith, with Pipenv setup.
 ---
 
 # Python Service Dockerizer (`py-dockerize-service`)

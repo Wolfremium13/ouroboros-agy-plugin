@@ -1,6 +1,6 @@
 ---
 name: py-normalize-project
-description: Automatically refactor, format, and normalize C# and Python codebases to conform to Clean Architecture, DDD, type annotations, and naming conventions.
+description: Refactor, format, and normalize C# and Python code to conform to Clean Architecture and DDD.
 ---
 
 # Python Codebase Compliance Normalizer (`py-normalize-project`)

@@ -1,6 +1,6 @@
 ---
 name: py-create-project
-description: Create new Python projects, bounded contexts, features, value objects, domain models, ports, use cases, or controllers complying with clean architecture, DDD, and BDD guidelines.
+description: Create clean Python projects, domain models, ports, and use cases complying with DDD and BDD.
 ---
 
 # Clean Python Project Creator (`py-create-project`)

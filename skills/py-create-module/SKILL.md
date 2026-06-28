@@ -1,6 +1,6 @@
 ---
 name: py-create-module
-description: Create a new module (bounded context slice or deployable service) inside an existing Python monorepo project skeleton, asking for a BDD use case.
+description: Create a new bounded context slice or deployable service inside an existing Python monorepo.
 ---
 
 # Python Monorepo Module Scaffolder (`py-create-module`)

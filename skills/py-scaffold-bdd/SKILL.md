@@ -1,6 +1,6 @@
 ---
 name: py-scaffold-bdd
-description: Automatically generate Python step definitions (pytest-bdd / behave) from Gherkin feature files, connected directly to application use case contracts.
+description: Generate Python step definitions from Gherkin feature files, connected to use case contracts.
 ---
 
 # Python BDD Step Scaffolder (`py-scaffold-bdd`)

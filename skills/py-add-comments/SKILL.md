@@ -1,6 +1,6 @@
 ---
 name: py-add-comments
-description: Add or update Python docstrings and comments using Google Style. Triggers when the user wants to add, document, or check comments in Python code.
+description: Add/update Google Style Python docstrings and comments when documenting or checking Python code.
 ---
 
 # Google-Style Python Documenter (`py-add-comments`)
