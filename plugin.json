@@ -1,4 +1,5 @@
 {
   "name": "ouroboros-agy-plugin",
-  "description": "Wolfremium's Python harness and MCP skills for Antigravity"
+  "description": "Wolfremium's Python harness and MCP skills for Antigravity",
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json"
 }
